@@ -1,0 +1,16 @@
+RUN_NAME: 'bloodmnist_usl'
+
+DATASET:
+  NAME: 'bloodmnist'
+  TRANSFORM_NAME: 'medMNIST'
+
+DATALOADER:
+  BATCH_SIZE: 128
+
+MODEL:
+  ARCH: 'resnet18'
+  PRETRAIN_PATH: 'pretrained/model_best_128_2.pth'
+
+FINETUNE:
+  LABELED_INDICES_PATH: '../semisup-fixmatch-cifar/indices/MedMNIST/bloodmnist/selected_indices_16_12_usl.npy'
+  REPEAT_DATA: 100
